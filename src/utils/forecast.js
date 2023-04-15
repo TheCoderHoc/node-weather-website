@@ -26,7 +26,7 @@ const forecast = (longitude, latitude, callback) => {
             return;
         }
 
-        const { temp, humidity, weather } = current;
+        const { temp, humidity, weather, wind_speed } = current;
 
         const summary = weather[0].description;
 
@@ -37,7 +37,9 @@ const forecast = (longitude, latitude, callback) => {
                 temp +
                 " degrees out. There is a " +
                 humidity +
-                "% chance of rain."
+                "% chance of rain. Current wind speed is " +
+                wind_speed +
+                "km/hr."
         );
     });
 };
